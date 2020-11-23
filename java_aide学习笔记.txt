@@ -1,0 +1,88 @@
+aide学习笔记：
+**1.引用java文件可import *.java。简便方法是选择错误处，右上角菜单-更多-代码-导入即可。
+**2.去掉标题栏或改变主题样式
+在主xml（AndroidMainifest.xml）文件里acticity前加入
+android:theme="@android:style/Theme.Holo.NoActionBar" >
+也可白色背景
+android:theme="@android:style/Theme.Light.NoTitleBar">
+**3.大数计算不准，用BigDecimal。
+**4.sdcard操作需要权限。写文件的函数,需要在AndroidMainifest.xml中加入<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+**5.button要import view.View.*;和
+import android.view.View.OnClickListener;
+Intent要import android.content.Intent;
+**6.闪退怎么办？一般是xml文件错误。如button控件没有定义android:layout_width="wrap_content"。也有可能是数组溢出。
+**7.基本语法：判断语句 ：if(a>b){do sth.}&&与，||或。循环语句：for(int i=0;i<9;i++){}。while(a>b){do sth.}
+**8.调用函数方法
+import EncodingDetect;//直接引用判断文件编码
+在主文件：
+EncodingDetect encodingdetect=new EncodingDetect();
+fileEncode=encodingdetect.detectEncoding(file);
+**9.字符串相关
+一、String类的方法
+1.str.length（）
+   获取字符串长度。
+2.str.indexOf()或者lastIndexOf()
+  获取指定字符或子字符串在str中的位置。
+3.str.equals()
+  用于两字符串的比较。
+4.str.charAt()
+  获取指定位置的字符。
+5.str.getChars(int strBegin, int strEnd, char[ ] dest, int destBegin)
+  获取从strBegin到strEnd的字符串，并将其放在字符串dest的destBegin位置。
+6.str.subString(int start, int end)
+  提取从start位置开始到end为的字符串。
+7.str.replace(char A, char B)
+  将字符串str中的A替换为B。
+8.str.concat(str2)
+  将str与str2合并为一个字符串。
+9.str.toUpperCase()/toLowerCase()
+  将字符串转为大写/小写
+10.str.trim()
+  将str开头和结尾的空格去掉。
+11.String.velueOf()
+  将其他类型的数据对象转换为字符串。
+12.str.split(separator, howmany)
+  将str以separator切分子字符串，最多保留howmany个（若howmany缺失，就保留全部子字符串）。
+二、StringBuffer类
+1. strb.append()
+  在strb后面追加字符串。
+2.strb.insert(int bengin, string str)
+  在strb的begin位置，插入str。
+3.strb.setCharAt(int begin, char A)
+  将strb的begin位置的字符替换为A。
+**10.文本框只允许输入数字
+InputType方法；在xml布局文件里
+et.setInputType(InputType.TYPE_CLASS_NUMBER);
+			
+**10.系统自带主题：
+API 1:
+android:Theme 根主题
+android:Theme.Black 背景黑色
+android:Theme.Light 背景白色
+android:Theme.Wallpaper 以桌面墙纸为背景
+android:Theme.Translucent 透明背景
+android:Theme.Panel 平板风格
+android:Theme.Dialog 对话框风格
+API 11:
+android:Theme.Holo Holo根主题
+android:Theme.Holo.Black Holo黑主题
+android:Theme.Holo.Light Holo白主题
+API 14:
+Theme.DeviceDefault 设备默认根主题
+Theme.DeviceDefault.Black 设备默认黑主题
+Theme.DeviceDefault.Light 设备默认白主题
+API 21: (网上常说的 Android Material Design 就是要用这种主题)
+Theme.Material Material根主题
+Theme.Material.Light Material白主题
+
+兼容包v7中带的主题：
+Theme.AppCompat 兼容主题的根主题
+Theme.AppCompat.Black 兼容主题的黑色主题
+Theme.AppCompat.Light 兼容主题的白色主题
+		
+**11.字符串转数字
+Integer.valueOf();
+
+**12.
+
+ 
